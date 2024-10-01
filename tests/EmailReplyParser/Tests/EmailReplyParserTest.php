@@ -79,6 +79,13 @@ EMAIL
         $this->assertEquals("Great thanks Bort, going for a test now.\nBraxton", EmailReplyParser::parseReply($body));
     }
 
+    public function testParseOutSentFromExchange20241001()
+    {
+        $body = $this->getFixtures('email_exchange_2024-10-01.txt');
+
+        $this->assertEquals("Hey Bort,\n\nThanks for reaching out.\n\nFee Fi Fo Fum\n\nKind regards,\nFirst Last\nSome Employee Title", EmailReplyParser::parseReply($body));
+    }
+
     public function testParseOutSendFromMultiwordMobileDevice()
     {
         $body = $this->getFixtures('email_multi_word_sent_from_my_mobile_device.txt');

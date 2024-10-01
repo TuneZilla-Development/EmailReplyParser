@@ -46,6 +46,7 @@ class EmailParser
         '/^(20[0-9]{2}\/.+のメッセージ:)$/m', // DATE TIME、NAME のメッセージ:
         '/^(.+\s<.+>\sschrieb:)$/m', // NAME <EMAIL> schrieb:
         '/^\s*(From\s?:.+\s?(\[|<).+(\]|>))/mu', // "From: NAME <EMAIL>" OR "From : NAME <EMAIL>" OR "From : NAME<EMAIL>"(With support whitespace before start and before <)
+        '/^\s*(From\s?:.+\nSent\s?:.+\nTo\s?:.+(\[|<).+(\]|>)\nSubject:.+)/mu', // "From: NAME\nSent: DATE\nTo: NAME <EMAIL>\nSubject:"
         '/^\s*(发件人\s?:.+\s?(\[|<).+(\]|>))/mu', // "发件人: NAME <EMAIL>" OR "发件人 : NAME <EMAIL>" OR "发件人 : NAME<EMAIL>"(With support whitespace before start and before <)
         '/^\s*(De\s?:.+\s?(\[|<).+(\]|>))/mu', // "De: NAME <EMAIL>" OR "De : NAME <EMAIL>" OR "De : NAME<EMAIL>"  (With support whitespace before start and before <)
         '/^\s*(Van\s?:.+\s?(\[|<).+(\]|>))/mu', // "Van: NAME <EMAIL>" OR "Van : NAME <EMAIL>" OR "Van : NAME<EMAIL>"  (With support whitespace before start and before <)
